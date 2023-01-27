@@ -30,73 +30,118 @@
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.ratingControl1 = new EvaluationCheck.RatingControl();
-            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 121);
+            this.comboBox1.Location = new System.Drawing.Point(100, 100);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(282, 33);
+            this.comboBox1.Size = new System.Drawing.Size(300, 41);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(450, 121);
+            this.comboBox2.Location = new System.Drawing.Point(500, 100);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(282, 33);
+            this.comboBox2.Size = new System.Drawing.Size(300, 41);
             this.comboBox2.TabIndex = 5;
             // 
-            // ratingControl1
+            // comboBox3
             // 
-            this.ratingControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ratingControl1.Location = new System.Drawing.Point(617, 503);
-            this.ratingControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.ratingControl1.MinimumSize = new System.Drawing.Size(15, 13);
-            this.ratingControl1.Name = "ratingControl1";
-            this.ratingControl1.Rating1 = 0;
-            this.ratingControl1.Size = new System.Drawing.Size(450, 45);
-            this.ratingControl1.TabIndex = 6;
-            this.ratingControl1.Click += new System.EventHandler(this.ratingControl1_Click);
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(900, 100);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(300, 41);
+            this.comboBox3.TabIndex = 6;
             // 
-            // label1
+            // listBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(745, 390);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 25;
+            this.listBox1.Location = new System.Drawing.Point(657, 215);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(300, 629);
+            this.listBox1.TabIndex = 7;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 25;
+            this.listBox2.Location = new System.Drawing.Point(963, 215);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(300, 629);
+            this.listBox2.TabIndex = 8;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 25;
+            this.listBox3.Location = new System.Drawing.Point(1269, 215);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(300, 629);
+            this.listBox3.TabIndex = 9;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(100, 250);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(540, 566);
+            this.dataGridView1.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 865);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ratingControl1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.listBox3);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salon Samochodowy";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private EvaluationCheck.RatingControl ratingControl1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
