@@ -13,6 +13,29 @@ namespace TK_Projekt
         static private bool login = false;
         private int counter = 0;
         static public bool Login { get { return login; } set { login = value; } }
+        private void LoadList()
+        {
+            Wyposazenie Wyposazenie = new Wyposazenie();
+            Wyposazenie = new SQLClassWyp().Connection(Pojazds[Table1.CurrentRow.Index].Id);
+
+            MemoryStream image = new MemoryStream(Pojazds[Table1.CurrentRow.Index].Image);
+            pictureBox1.Image = Image.FromStream(image);
+            label1.Text = "Marka: " + Pojazds[Table1.CurrentRow.Index].MarkaSamochodu.Trim();
+            label2.Text = "Model: " + Pojazds[Table1.CurrentRow.Index].ModelSamochodu.Trim();
+            string met = Pojazds[Table1.CurrentRow.Index].CzyMetallic ? " - Metalic" : "";
+            label3.Text = "Kolor: " + Pojazds[Table1.CurrentRow.Index].KolorSamochodu.Trim() + met;
+            label4.Text = "Rok Produkcji:  " + Pojazds[Table1.CurrentRow.Index].RokProdukcji;
+            label5.Text = "Pojemność silnika: " + Pojazds[Table1.CurrentRow.Index].Silnik;
+
+            label6.Visible = Wyposazenie.Klimatyzacja ? true : false;
+            label7.Visible = Wyposazenie.Radio ? true : false;
+            label8.Visible = Wyposazenie.Szyberdach ? true : false;
+            label9.Visible = Wyposazenie.Nawigacja ? true : false;
+            label10.Visible = Wyposazenie.CarPlay ? true : false;
+
+            SQLClassRating some = new SQLClassRating();
+            label12.Text = some.Connection(Pojazds[Table1.CurrentRow.Index].Id).ToString();
+        }
         private void FullList(string marka= "", string model = "", string kolor = "", int rok= 0, float silnik=0, bool metalic=false)//, Image image=null)
         {
             Table1.Rows.Clear();
@@ -72,6 +95,8 @@ namespace TK_Projekt
             label10.Visible= false;
 
             edycjaToolStripMenuItem.Visible = Login;
+
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -87,6 +112,7 @@ namespace TK_Projekt
                     }
                 }
             }
+            LoadList();
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -233,26 +259,7 @@ namespace TK_Projekt
         }
         private void Table1_Cell_Click(object sender, DataGridViewCellEventArgs e)
         {
-            Wyposazenie Wyposazenie = new Wyposazenie();
-            Wyposazenie = new SQLClassWyp().Connection(Pojazds[Table1.CurrentRow.Index].Id);
-
-            MemoryStream image = new MemoryStream(Pojazds[Table1.CurrentRow.Index].Image);
-            pictureBox1.Image= Image.FromStream(image);
-            label1.Text = "Marka: " + Pojazds[Table1.CurrentRow.Index].MarkaSamochodu.Trim();
-            label2.Text = "Model: " + Pojazds[Table1.CurrentRow.Index].ModelSamochodu.Trim();
-            string met = Pojazds[Table1.CurrentRow.Index].CzyMetallic ? " - Metalic" : "";
-            label3.Text = "Kolor: " + Pojazds[Table1.CurrentRow.Index].KolorSamochodu.Trim() + met;
-            label4.Text = "Rok Produkcji:  " + Pojazds[Table1.CurrentRow.Index].RokProdukcji;
-            label5.Text = "Pojemność silnika: " + Pojazds[Table1.CurrentRow.Index].Silnik;
-
-            label6.Visible = Wyposazenie.Klimatyzacja ? true : false;
-            label7.Visible = Wyposazenie.Radio ? true : false;
-            label8.Visible = Wyposazenie.Szyberdach ? true : false;
-            label9.Visible = Wyposazenie.Nawigacja ? true : false;
-            label10.Visible = Wyposazenie.CarPlay? true : false;
-
-            SQLClassRating some = new SQLClassRating();
-            label12.Text = some.Connection(Pojazds[Table1.CurrentRow.Index].Id).ToString();
+            LoadList();
         }
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -277,13 +284,13 @@ namespace TK_Projekt
             {
                 counter++;
 
-                if (counter > 120)
+                if (counter > 1200)
                 {
                     counter = 0;
                     Login = false;
                 }
-                edycjaToolStripMenuItem.Visible = Login;
             }
+            edycjaToolStripMenuItem.Visible = Login;
         }
     }
 }
