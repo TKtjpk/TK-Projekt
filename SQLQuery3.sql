@@ -1,0 +1,1 @@
+﻿SELECT * FROM Admin WHERE User LIKE 'kali';
